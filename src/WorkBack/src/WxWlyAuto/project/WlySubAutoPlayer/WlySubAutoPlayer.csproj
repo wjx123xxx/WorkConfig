@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D11189F6-CD6B-4C09-8047-E46466FCE4A7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Wx.App.WlySubAutoPlayer</RootNamespace>
+    <AssemblyName>WlySubAutoPlayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\publish\WlyAuto\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\publish\WlyAutoSub\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Biz\RegEntity.cs" />
+    <Compile Include="src\Biz\SubAccountInfo.cs" />
+    <Compile Include="src\Biz\SubEntity.cs" />
+    <Compile Include="src\Biz\SubTaskMgr.cs" />
+    <Compile Include="src\Common\BoolToColorConverter.cs" />
+    <Compile Include="src\Common\TimeToColorConverter.cs" />
+    <Compile Include="src\Common\TimeToLastConverter.cs" />
+    <Compile Include="src\Common\WlyTaskSwitchWrapper.cs" />
+    <Compile Include="src\Tasks\任务_军团日常.cs" />
+    <Compile Include="src\Tasks\任务_加入军团.cs" />
+    <Compile Include="src\Tasks\任务_名称检测.cs" />
+    <Compile Include="src\Tasks\任务_攻打城市.cs" />
+    <Compile Include="src\Tasks\任务_角色检测.cs" />
+    <Compile Include="src\Tasks\任务_退出军团.cs" />
+    <Compile Include="src\Tasks\任务_金币研发.cs" />
+    <Compile Include="src\View\AutoPlayerWnd.xaml.cs">
+      <DependentUpon>AutoPlayerWnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\VM\AutoPlayerVM.cs" />
+    <Compile Include="src\VM\SubEntityWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="src\View\AutoPlayerWnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Utility\project\WxCommon\WxCommon.csproj">
+      <Project>{d7c9a141-d56d-4219-9106-3c3eefa8e478}</Project>
+      <Name>WxCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Utility\project\WxForDM\WxForDM.csproj">
+      <Project>{fde7d1f9-9d56-4c5f-b0ee-f263ce952752}</Project>
+      <Name>WxForDM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Utility\project\WxFramework\WxFramework.csproj">
+      <Project>{d3bb4e1b-397f-4d3f-998d-560c688618f7}</Project>
+      <Name>WxFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Utility\project\WxUICommon\WxUICommon.csproj">
+      <Project>{6a50576c-e0d2-4e95-9133-5689310e4a89}</Project>
+      <Name>WxUICommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WlyAutoBiz\WlyAutoBiz.csproj">
+      <Project>{2dc913c3-4a8a-40ab-a661-d80c99c545f0}</Project>
+      <Name>WlyAutoBiz</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

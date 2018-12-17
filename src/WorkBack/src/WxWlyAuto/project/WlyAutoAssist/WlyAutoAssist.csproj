@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D9535A1-7EB1-4B69-A345-025F9AFB5F7C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Wx.App.WlyAutoAssist</RootNamespace>
+    <AssemblyName>WlyAutoAssist</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\publish\WlyAutoAssist\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\publish\WlyAutoAssist\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Biz\AssistEntity.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Biz\AssistTaskMgr.cs" />
+    <Compile Include="src\Tasks\任务_小号辅助.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Utility\project\WxCommon\WxCommon.csproj">
+      <Project>{D7C9A141-D56D-4219-9106-3C3EEFA8E478}</Project>
+      <Name>WxCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Utility\project\WxForDM\WxForDM.csproj">
+      <Project>{FDE7D1F9-9D56-4C5F-B0EE-F263CE952752}</Project>
+      <Name>WxForDM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Utility\project\WxFramework\WxFramework.csproj">
+      <Project>{D3BB4E1B-397F-4D3F-998D-560C688618F7}</Project>
+      <Name>WxFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Utility\project\WxUICommon\WxUICommon.csproj">
+      <Project>{6A50576C-E0D2-4E95-9133-5689310E4A89}</Project>
+      <Name>WxUICommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WlyAutoBiz\WlyAutoBiz.csproj">
+      <Project>{2DC913C3-4A8A-40AB-A661-D80C99C545F0}</Project>
+      <Name>WlyAutoBiz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WlyAutoUI\WlyAutoUI.csproj">
+      <Project>{F16334C1-C307-4EC9-A94C-9F2B625F7F4D}</Project>
+      <Name>WlyAutoUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

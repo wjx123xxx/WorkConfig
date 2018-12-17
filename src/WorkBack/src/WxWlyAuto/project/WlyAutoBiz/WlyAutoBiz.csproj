@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2DC913C3-4A8A-40AB-A661-D80C99C545F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wx.Lib.WlyAutoBiz</RootNamespace>
+    <AssemblyName>WlyAutoBiz</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Utility\solution\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\WlyAttribute\WlyQualityAttribute.cs" />
+    <Compile Include="src\WlyAttribute\WlyTaskAttribute.cs" />
+    <Compile Include="src\WlyBiz\WlyFormationMgr.cs" />
+    <Compile Include="src\WlyBiz\WlyGroupMgr.cs" />
+    <Compile Include="src\WlyBiz\WlyMainLevelMgr.cs" />
+    <Compile Include="src\WlyBiz\WlyMapMgr.cs" />
+    <Compile Include="src\WlyBiz\WlyProgressMgr.cs" />
+    <Compile Include="src\WlyBiz\WlyTaskMgr.cs" />
+    <Compile Include="src\WlyBiz\WlyTechnologyMgr.cs" />
+    <Compile Include="src\WlyCommon\WlyDailyTask.cs" />
+    <Compile Include="src\WlyCommon\WlyFinalTask.cs" />
+    <Compile Include="src\WlyCommon\WlyProgressNode.cs" />
+    <Compile Include="src\WlyDefinition\WlyColor.cs" />
+    <Compile Include="src\WlyDefinition\WlyFormationType.cs" />
+    <Compile Include="src\WlyDefinition\WlyGroupType.cs" />
+    <Compile Include="src\WlyDefinition\WlySoldierType.cs" />
+    <Compile Include="src\WlyInfo\WlyEquipInfo.cs" />
+    <Compile Include="src\WlyInfo\WlySwitchInfo.cs" />
+    <Compile Include="src\WlyCommon\WlyTimeTask.cs" />
+    <Compile Include="src\WlyCommon\WlyTaskBase.cs" />
+    <Compile Include="src\WlyCommon\WlyTaskInfo.cs" />
+    <Compile Include="src\WlyCommon\WlyTaskRunner.cs" />
+    <Compile Include="src\WlyCommon\WlyMainTask.cs" />
+    <Compile Include="src\WlyDefinition\WlyCityType.cs" />
+    <Compile Include="src\WlyDefinition\WlyQualityType.cs" />
+    <Compile Include="src\WlyDefinition\WlySwitchType.cs" />
+    <Compile Include="src\WlyDefinition\WlyTarget.cs" />
+    <Compile Include="src\WlyDefinition\WlyTaskType.cs" />
+    <Compile Include="src\WlyInfo\WlyBuildingInfo.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_免费军团.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_兵种重修.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_商城刷新.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_商旅派遣.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_国政日常.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_委派.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_手动巡查.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_收粮.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_竞技场.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_领取俸禄.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_厉兵秣马.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_小助手设置.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_属性重置.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_推试炼塔.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_武将下野.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_武将培养.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_武将招募.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_游戏助手.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_王位争夺战.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_获取威望.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_获取政绩.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_重修设定.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_开发城池.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_征收.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_手动打猎.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_收取贡品.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_普通砸罐.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_清理装备.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_游历.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_生产.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_酒馆.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_主公经验.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_活跃度奖励.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_主线奖励.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_升级建筑.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_修理船只.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_卖粮.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_古城探险.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_城池争夺战.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_客串海盗.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_寻访.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_巡查.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_开启格子.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_强征.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_打猎.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_升级科技.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_开通队列.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_征召士兵.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_推图.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_搬迁主城.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_武将上阵.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_武将突飞.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_武将转职.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_武将顿悟.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_设置兵种.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_购买礼包.cs" />
+    <Compile Include="src\WlyTasks\MainTask\任务_需求装备.cs" />
+    <Compile Include="src\WlyTasks\TimeTask\任务_古代战场.cs" />
+    <Compile Include="src\WlyTasks\TimeTask\任务_擂台助威.cs" />
+    <Compile Include="src\WlyTasks\TimeTask\任务_擂台赛报名.cs" />
+    <Compile Include="src\WlyTasks\TimeTask\任务_活动副本.cs" />
+    <Compile Include="src\WlyTasks\TimeTask\任务_海盗活动.cs" />
+    <Compile Include="src\WlyTasks\TimeTask\任务_海鲜副本.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_清理仓库.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_田矿占领.cs" />
+    <Compile Include="src\WlyTasks\TimeTask\任务_群雄逐鹿.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_购买军令.cs" />
+    <Compile Include="src\WlyTasks\TimeTask\任务_虎牢关战役.cs" />
+    <Compile Include="src\WlyTasks\TimeTask\任务_购物.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_领取奖励.cs" />
+    <Compile Include="src\WlyTasks\DailyTask\任务_重登陆.cs" />
+    <Compile Include="src\WlyInfo\WlyStaffInfo.cs" />
+    <Compile Include="src\WlyBiz\WlyEquipMgr.cs" />
+    <Compile Include="src\WlyBiz\WlyStaffMgr.cs" />
+    <Compile Include="src\WlyUtility\WlyEntityBiz.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_仓库.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_农田.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_工坊.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_民居.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_试炼塔.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_账房.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_钱庄.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_国政.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_密室.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_游历.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_竞技场.cs" />
+    <Compile Include="src\WlyViews\功能_主公信息.cs" />
+    <Compile Include="src\WlyViews\功能_主公属性.cs" />
+    <Compile Include="src\WlyViews\功能_主线任务.cs" />
+    <Compile Include="src\WlyViews\功能_军团信息.cs" />
+    <Compile Include="src\WlyViews\功能_军团战.cs" />
+    <Compile Include="src\WlyViews\功能_军团礼包.cs" />
+    <Compile Include="src\WlyViews\功能_军团科技.cs" />
+    <Compile Include="src\WlyViews\功能_出航贸易.cs" />
+    <Compile Include="src\WlyViews\功能_厉兵秣马.cs" />
+    <Compile Include="src\WlyViews\功能_古代战场.cs" />
+    <Compile Include="src\WlyViews\功能_商旅.cs" />
+    <Compile Include="src\WlyViews\功能_团战报名.cs" />
+    <Compile Include="src\WlyViews\功能_委派.cs" />
+    <Compile Include="src\WlyViews\功能_官职.cs" />
+    <Compile Include="src\WlyViews\功能_将器.cs" />
+    <Compile Include="src\WlyViews\功能_强化装备.cs" />
+    <Compile Include="src\WlyViews\功能_征兵.cs" />
+    <Compile Include="src\WlyViews\功能_招募.cs" />
+    <Compile Include="src\WlyViews\功能_普通砸罐.cs" />
+    <Compile Include="src\WlyViews\功能_武将.cs" />
+    <Compile Include="src\WlyViews\功能_每日任务.cs" />
+    <Compile Include="src\WlyViews\功能_活跃.cs" />
+    <Compile Include="src\WlyViews\功能_游戏助手.cs" />
+    <Compile Include="src\WlyViews\功能_王位争夺战.cs" />
+    <Compile Include="src\WlyViews\功能_生产.cs" />
+    <Compile Include="src\WlyViews\功能_红包.cs" />
+    <Compile Include="src\WlyViews\功能_船坞.cs" />
+    <Compile Include="src\WlyViews\功能_装备.cs" />
+    <Compile Include="src\WlyViews\功能_试炼塔.cs" />
+    <Compile Include="src\WlyViews\功能_转盘.cs" />
+    <Compile Include="src\WlyViews\功能_酒馆.cs" />
+    <Compile Include="src\WlyViews\功能_阵型.cs" />
+    <Compile Include="src\WlyViews\右侧提示.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_世界地图.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_活动副本.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_虎牢关战役.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_兵营.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_商社.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_商货码头.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_民居4.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_民居3.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_民居2.cs" />
+    <Compile Include="src\WlyViews\Total\总成_任务.cs" />
+    <Compile Include="src\WlyViews\Total\总成_军团.cs" />
+    <Compile Include="src\WlyViews\Total\总成_武将.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_港口.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_船坞.cs" />
+    <Compile Include="src\WlyViews\功能_训练.cs" />
+    <Compile Include="src\WlyAttribute\WlyBuildingAttribute.cs" />
+    <Compile Include="src\WlyCommon\WlyBuildingViewBase.cs" />
+    <Compile Include="src\WlyDefinition\WlyBuildingType.cs" />
+    <Compile Include="src\WlyBiz\WlyBuildingMgr.cs" />
+    <Compile Include="src\WlyAttribute\WlyAIAttribute.cs" />
+    <Compile Include="src\WlyDefinition\WlyConstant.cs" />
+    <Compile Include="src\WlyDefinition\WlyEquipType.cs" />
+    <Compile Include="src\WlyDefinition\WlyExploreType.cs" />
+    <Compile Include="src\WlyDefinition\WlyStaffType.cs" />
+    <Compile Include="src\WlyAttribute\WlyViewAttribute.cs" />
+    <Compile Include="src\WlyInfo\WlyAccountInfo.cs" />
+    <Compile Include="src\WlyCommon\WlyEntity.cs" />
+    <Compile Include="src\WlyUtility\WlyUtilityBiz.cs" />
+    <Compile Include="src\WlyInfo\WlySystemInfo.cs" />
+    <Compile Include="src\WlyDefinition\WlyPicType.cs" />
+    <Compile Include="src\WlyCommon\TransferPath.cs" />
+    <Compile Include="src\WlyViews\Total\总成_船坞.cs" />
+    <Compile Include="src\WlyViews\招募_裴元绍.cs" />
+    <Compile Include="src\WlyViews\活动界面.cs" />
+    <Compile Include="src\WlyViews\Daily\日常_古代战场.cs" />
+    <Compile Include="src\WlyViews\略_充值.cs" />
+    <Compile Include="src\WlyViews\略_建筑等待.cs" />
+    <Compile Include="src\WlyViews\略_确定.cs" />
+    <Compile Include="src\WlyViews\略_等级礼包.cs" />
+    <Compile Include="src\WlyViews\略_花费提示.cs" />
+    <Compile Include="src\WlyViews\略_防沉迷验证.cs" />
+    <Compile Include="src\WlyViews\Daily\日常_擂台赛.cs" />
+    <Compile Include="src\WlyViews\聊天框.cs" />
+    <Compile Include="src\WlyViews\Daily\日常_城池争夺战.cs" />
+    <Compile Include="src\WlyViews\功能_征收.cs" />
+    <Compile Include="src\WlyViews\略_点击继续.cs" />
+    <Compile Include="src\WlyViews\导航_日常按钮栏.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_日常.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_副本.cs" />
+    <Compile Include="src\WlyViews\Daily\日常_古城探秘.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_战斗.cs" />
+    <Compile Include="src\WlyInterface\IWlyUIView.cs" />
+    <Compile Include="src\WlyViews\功能_寻访.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_海鲜副本.cs" />
+    <Compile Include="src\WlyViews\功能_商城.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_府邸.cs" />
+    <Compile Include="src\WlyViews\功能_打猎.cs" />
+    <Compile Include="src\WlyViews\略_加入失败.cs" />
+    <Compile Include="src\WlyViews\略_跳过.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_主城.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_主城.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_主界面.cs" />
+    <Compile Include="src\WlyViews\功能_市场.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_军团战.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_民居1.cs" />
+    <Compile Include="src\WlyViews\功能_军团.cs" />
+    <Compile Include="src\WlyViews\功能_巡查.cs" />
+    <Compile Include="src\WlyViews\Daily\日常_海盗.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_校场.cs" />
+    <Compile Include="src\WlyViews\右侧任务栏.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_资源区.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_策略府.cs" />
+    <Compile Include="src\WlyViews\功能_卖粮.cs" />
+    <Compile Include="src\WlyViews\Building\建筑_商铺.cs" />
+    <Compile Include="src\WlyViews\功能_属臣.cs" />
+    <Compile Include="src\WlyViews\Total\总成_装备.cs" />
+    <Compile Include="src\WlyViews\Total\总成_主城.cs" />
+    <Compile Include="src\WlyViews\功能_升级科技.cs" />
+    <Compile Include="src\WlyViews\功能_仓库.cs" />
+    <Compile Include="src\WlyViews\Daily\日常_群雄逐鹿.cs" />
+    <Compile Include="src\WlyBiz\WlyViewMgr.cs" />
+    <Compile Include="src\WlyCommon\WlyUIViewBase.cs" />
+    <Compile Include="src\WlyDefinition\WlyViewType.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_武魁高塔战斗.cs" />
+    <Compile Include="src\WlyViews\Scene\场景_武魁高塔.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Utility\project\WxCommon\WxCommon.csproj">
+      <Project>{D7C9A141-D56D-4219-9106-3C3EEFA8E478}</Project>
+      <Name>WxCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Utility\project\WxForDM\WxForDM.csproj">
+      <Project>{fde7d1f9-9d56-4c5f-b0ee-f263ce952752}</Project>
+      <Name>WxForDM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Utility\project\WxFramework\WxFramework.csproj">
+      <Project>{D3BB4E1B-397F-4D3F-998D-560C688618F7}</Project>
+      <Name>WxFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Utility\project\WxUICommon\WxUICommon.csproj">
+      <Project>{6A50576C-E0D2-4E95-9133-5689310E4A89}</Project>
+      <Name>WxUICommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\进入游戏.png" />
+    <EmbeddedResource Include="images\登录成功.png" />
+    <EmbeddedResource Include="images\超强炮舰.png" />
+    <EmbeddedResource Include="images\每日奖励.png" />
+    <EmbeddedResource Include="images\Vip奖励.png" />
+    <EmbeddedResource Include="images\选择国家.png" />
+    <EmbeddedResource Include="images\日常按钮.bmp" />
+    <EmbeddedResource Include="images\资源区.bmp" />
+    <EmbeddedResource Include="images\日常关闭.bmp" />
+    <EmbeddedResource Include="images\军团按钮.bmp" />
+    <EmbeddedResource Include="images\活跃按钮.bmp" />
+    <EmbeddedResource Include="images\海盗按钮.bmp" />
+    <EmbeddedResource Include="images\海鲜副本按钮.bmp" />
+    <EmbeddedResource Include="images\竞技场按钮.bmp" />
+    <EmbeddedResource Include="images\海鲜副本.bmp" />
+    <EmbeddedResource Include="images\日常.bmp" />
+    <EmbeddedResource Include="images\开服礼包.bmp" />
+    <EmbeddedResource Include="images\离线奖励.bmp" />
+    <EmbeddedResource Include="images\吴国军团.bmp" />
+    <EmbeddedResource Include="images\打劫目标.bmp" />
+    <EmbeddedResource Include="images\活动副本.bmp" />
+    <EmbeddedResource Include="images\可攻击目标.bmp" />
+    <EmbeddedResource Include="images\下一个副本.bmp" />
+    <EmbeddedResource Include="images\新用户注册.bmp" />
+    <EmbeddedResource Include="images\关闭按钮.bmp" />
+    <EmbeddedResource Include="images\活动一览按钮.bmp" />
+    <EmbeddedResource Include="images\酒馆按钮.bmp" />
+    <EmbeddedResource Include="images\首攻军团.bmp" />
+    <EmbeddedResource Include="images\收费军团.bmp" />
+    <EmbeddedResource Include="images\试炼塔目标.bmp" />
+    <EmbeddedResource Include="images\封赏.bmp" />
+    <EmbeddedResource Include="images\王位争夺战.bmp" />
+    <EmbeddedResource Include="images\厉兵秣马.bmp" />
+    <EmbeddedResource Include="images\游戏助手按钮.bmp" />
+    <Content Include="resource\WLYWord.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

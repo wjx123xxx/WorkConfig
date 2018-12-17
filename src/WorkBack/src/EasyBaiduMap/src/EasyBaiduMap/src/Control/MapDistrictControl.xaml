@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Wx.App.EasyBaiduMap.Control.MapDistrictControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             Height="768" 
+             Width="768">
+    <Border BorderBrush="Black" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="256" />
+                <RowDefinition Height="256" />
+                <RowDefinition Height="256" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="256" />
+                <ColumnDefinition Width="256" />
+                <ColumnDefinition Width="256" />
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0" Grid.Column="0" Source="{Binding Tiles[0]}" />
+            <Image Grid.Row="0" Grid.Column="1" Source="{Binding Tiles[1]}" />
+            <Image Grid.Row="0" Grid.Column="2" Source="{Binding Tiles[2]}" />
+            <Image Grid.Row="1" Grid.Column="0" Source="{Binding Tiles[3]}" />
+            <Image Grid.Row="1" Grid.Column="1" Source="{Binding Tiles[4]}" />
+            <Image Grid.Row="1" Grid.Column="2" Source="{Binding Tiles[5]}" />
+            <Image Grid.Row="2" Grid.Column="0" Source="{Binding Tiles[6]}" />
+            <Image Grid.Row="2" Grid.Column="1" Source="{Binding Tiles[7]}" />
+            <Image Grid.Row="2" Grid.Column="2" Source="{Binding Tiles[8]}" />
+
+            <ItemsControl Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3"
+                          ItemsSource="{Binding Path=RegionLines}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Line X1="{Binding Point1.X}" Y1="{Binding Point1.Y}"
+                              X2="{Binding Point2.X}" Y2="{Binding Point2.Y}"
+                              Stroke="Red" StrokeThickness="1" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </Border>
+</UserControl>

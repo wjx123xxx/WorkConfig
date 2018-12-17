@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WxFramework", "..\project\WxFramework\WxFramework.csproj", "{D3BB4E1B-397F-4D3F-998D-560C688618F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "framework", "framework", "{B1AA392C-76D2-47AF-AD7E-AAEF62B9124B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WxCommon", "..\project\WxCommon\WxCommon.csproj", "{D7C9A141-D56D-4219-9106-3C3EEFA8E478}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{A03497FE-63BD-48F1-86D8-26F452360255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WxUICommon", "..\project\WxUICommon\WxUICommon.csproj", "{6A50576C-E0D2-4E95-9133-5689310E4A89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WxMapCommon", "..\project\WxMapCommon\WxMapCommon.csproj", "{473ADA95-5484-4CEA-AF2E-03762FA6B999}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3BB4E1B-397F-4D3F-998D-560C688618F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3BB4E1B-397F-4D3F-998D-560C688618F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3BB4E1B-397F-4D3F-998D-560C688618F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3BB4E1B-397F-4D3F-998D-560C688618F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7C9A141-D56D-4219-9106-3C3EEFA8E478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7C9A141-D56D-4219-9106-3C3EEFA8E478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7C9A141-D56D-4219-9106-3C3EEFA8E478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7C9A141-D56D-4219-9106-3C3EEFA8E478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A50576C-E0D2-4E95-9133-5689310E4A89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A50576C-E0D2-4E95-9133-5689310E4A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A50576C-E0D2-4E95-9133-5689310E4A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A50576C-E0D2-4E95-9133-5689310E4A89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{473ADA95-5484-4CEA-AF2E-03762FA6B999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{473ADA95-5484-4CEA-AF2E-03762FA6B999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{473ADA95-5484-4CEA-AF2E-03762FA6B999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{473ADA95-5484-4CEA-AF2E-03762FA6B999}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D3BB4E1B-397F-4D3F-998D-560C688618F7} = {B1AA392C-76D2-47AF-AD7E-AAEF62B9124B}
+		{D7C9A141-D56D-4219-9106-3C3EEFA8E478} = {A03497FE-63BD-48F1-86D8-26F452360255}
+		{6A50576C-E0D2-4E95-9133-5689310E4A89} = {A03497FE-63BD-48F1-86D8-26F452360255}
+		{473ADA95-5484-4CEA-AF2E-03762FA6B999} = {A03497FE-63BD-48F1-86D8-26F452360255}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A32AE54-C588-48F6-AF33-798C6F544858}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,64 @@
+﻿<Window x:Class="Wx.App.WlyUIViewViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:styleSelector="clr-namespace:Wx.App.WlyUIViewViewer.StyleSelector"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <ItemContainerTemplate x:Key="UIViewTemplate">
+            <Border BorderThickness="2"
+                    BorderBrush="{Binding Brush}"
+                    CornerRadius="5"
+                    Width="{Binding Width}"
+                    Height="{Binding Height}">
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Foreground="Navy"
+                               HorizontalAlignment="Center" />
+                    <TextBlock Text="{Binding SubTitle}"
+                               FontSize="14"
+                               Foreground="Navy"
+                               HorizontalAlignment="Center" />
+                </StackPanel>
+            </Border>
+        </ItemContainerTemplate>
+        <ItemContainerTemplate x:Key="LineTemplate">
+            <Path Data="{Binding Data}"
+                  StrokeThickness="1"
+                  Stroke="{Binding Brush}" />
+        </ItemContainerTemplate>
+        <styleSelector:UIViewTemplateSelector x:Key="uiViewTemplateSelector"
+                                              UIViewTemplate="{StaticResource UIViewTemplate}"
+                                              LineTemplate="{StaticResource LineTemplate}" />
+        <Style x:Key="ViewItemContainerStyle">
+            <Setter Property="Canvas.Left"
+                    Value="{Binding X}" />
+            <Setter Property="Canvas.Top"
+                    Value="{Binding Y}" />
+        </Style>
+        <Style x:Key="LineItemContainerStyle">
+            <Setter Property="ListBoxItem.IsEnabled"
+                    Value="False" />
+            <Setter Property="ListBoxItem.IsHitTestVisible"
+                    Value="False" />
+        </Style>
+        <styleSelector:UIViewStyleSelector x:Key="uiViewStyleSelector"
+                                           UIViewStyle="{StaticResource ViewItemContainerStyle}"
+                                           LineStyle="{StaticResource LineItemContainerStyle}" />
+    </Window.Resources>
+    <ListBox ItemsSource="{Binding ViewList}"
+             SelectedItem="{Binding SelectedView}"
+             Margin="5"
+             ItemTemplateSelector="{StaticResource uiViewTemplateSelector}"
+             ItemContainerStyleSelector="{StaticResource uiViewStyleSelector}">
+        <ListBox.ItemsPanel>
+            <ItemsPanelTemplate>
+                <Canvas Height="10000" Width="10000" />
+            </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+    </ListBox>
+</Window>

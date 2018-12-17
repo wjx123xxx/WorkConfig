@@ -4,3 +4,7 @@ publish
 bin
 packages
 .user
+.bmp
+*.data
+*.doc
+*.ppt

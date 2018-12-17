@@ -1,0 +1,66 @@
+﻿<Window x:Class="Wx.App.WlyTaskViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:styleSelector="clr-namespace:Wx.App.WlyTaskViewer.StyleSelector"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="350"
+        Width="525">
+    <Window.Resources>
+        <ItemContainerTemplate x:Key="TaskTemplate">
+            <Border BorderThickness="2"
+                    BorderBrush="{Binding Brush}"
+                    CornerRadius="5"
+                    Width="{Binding Width}"
+                    Height="{Binding Height}">
+                <StackPanel>
+                    <TextBlock Text="{Binding MainTitle}"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Foreground="Navy"
+                               HorizontalAlignment="Center" />
+                    <TextBlock Text="{Binding SubTitle}"
+                               FontSize="14"
+                               Foreground="Navy"
+                               HorizontalAlignment="Center" />
+                </StackPanel>
+            </Border>
+        </ItemContainerTemplate>
+        <ItemContainerTemplate x:Key="LineTemplate">
+            <Path Data="{Binding Data}"
+                  StrokeThickness="1"
+                  Stroke="{Binding Brush}" />
+        </ItemContainerTemplate>
+        <styleSelector:TaskTemplateSelector x:Key="taskTemplateSelector"
+                                      TaskTemplate="{StaticResource TaskTemplate}"
+                                      LineTemplate="{StaticResource LineTemplate}" />
+        <Style x:Key="TaskItemContainerStyle">
+            <Setter Property="Canvas.Left"
+                    Value="{Binding X}" />
+            <Setter Property="Canvas.Top"
+                    Value="{Binding Y}" />
+        </Style>
+        <Style x:Key="LineItemContainerStyle">
+            <Setter Property="ListBoxItem.IsEnabled"
+                    Value="False" 
+                   />
+            <Setter Property="ListBoxItem.IsHitTestVisible" Value="False"></Setter>
+        </Style>
+        <styleSelector:TaskStyleSelector x:Key="taskStyleSeletor"
+                                   TaskItemContainerStyle="{StaticResource TaskItemContainerStyle}"
+                                   LineItemContainerStyle="{StaticResource LineItemContainerStyle}" />
+    </Window.Resources>
+    <ListBox ItemsSource="{Binding TaskList}"
+             Margin="5"
+             Name="taskList"
+             ItemTemplateSelector="{StaticResource taskTemplateSelector}"
+             ItemContainerStyleSelector="{StaticResource taskStyleSeletor}">
+        <ListBox.ItemsPanel>
+            <ItemsPanelTemplate>
+                <Canvas Height="10000" />
+            </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+    </ListBox>
+</Window>
